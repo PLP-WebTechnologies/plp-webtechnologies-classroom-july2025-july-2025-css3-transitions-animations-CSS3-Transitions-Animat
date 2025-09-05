@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>✨ Interactive Card Gallery</h1>
+        <p>CSS Animations + JavaScript Functions</p>
+    </header>
+
+    <main>
+        <!-- Part 1: CSS Controls -->
+        <section class="controls-section">
+            <h2>🎨 CSS Animation Controls</h2>
+            <div class="control-group">
+                <button id="toggleAnimations" class="btn-primary">Toggle All Animations</button>
+                <button id="changeTheme" class="btn-secondary">Toggle Dark Mode</button>
+            </div>
+        </section>
+
+        <!-- Part 2: Card Gallery -->
+        <section class="gallery-section">
+            <h2>📚 Card Gallery</h2>
+            <div class="gallery-controls">
+                <button id="addCard" class="btn-success">+ Add Card</button>
+                <button id="shuffleCards" class="btn-warning">🔀 Shuffle Cards</button>
+            </div>
+            <div class="cards-container" id="cardsContainer">
+                <!-- Cards will be generated dynamically -->
+            </div>
+        </section>
+
+        <!-- Part 3: Function Demo -->
+        <section class="function-demo">
+            <h2>⚡ JavaScript Function Demo</h2>
+            <div class="demo-container">
+                <div class="input-group">
+                    <input type="number" id="numberInput" placeholder="Enter a number" min="1" max="100">
+                    <button onclick="calculateSquare()" class="btn-info">Calculate Square</button>
+                </div>
+                <div class="result-container">
+                    <p id="resultOutput">Result will appear here</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with CSS3 Animations & JavaScript Functions</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
