@@ -1,66 +1,257 @@
-# 🎬 Assignment: Bringing Web Pages to Life with CSS & JavaScript
+index.html
 
-In this assignment, you’ll create a visually dynamic and interactive experience by combining the beauty of **CSS3 animations** with the logic and power of **JavaScript functions**. By the end, you’ll have a mini interactive experience that not only looks good—but *feels* responsive and alive!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Portal Features</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
----
+  <h1> Learning Portal Features Demo</h1>
+  <section>
+    <h2> Enroll in a Course</h2>
+    <button class="btn-hover">Enroll Now</button>
+    <div class="fade-box"></div>
+  </section>
+  <section>
+    <h2>Study Helper Tool</h2>
+    <button onclick="showSquare(5)">Practice: 5²</button>
+    <button onclick="showSquare(10)">Practice: 10²</button>
+    <p id="output"></p>
+  </section>
+  <section>
+    <h2>Course Progress Tracker</h2>
+    <button onclick="startProgress()">Start Progress</button>
+    <div class="progress-container">
+      <div id="progressBar"></div>
+    </div>
+  </section>
 
-## 🎨✨ Part 1: CSS3 Transitions and Animations for Dynamic Styling Effects
+  <section>
+    <h2> New Lesson Notification</h2>
+    <button onclick="triggerBoxAnimation()">Check for Updates</button>
+    <div id="animatedBox"></div>
+  </section>
 
-Start by enhancing elements on your page using **CSS transitions** and **keyframe animations**. You can animate things like:
+  <div id="certificateModal">
+    <div class="certificate-content">
+       Congratulations!<br>
+      You have completed your course!<br>
+      <button onclick="closeCertificate()">Close</button>
+    </div>
+  </div>
 
-* Button hover effects
-* Smooth fades, slides, or transforms
-* Continuous or triggered animations using `@keyframes`
+  <script src="script.js"></script>
+</body>
+</html>
 
-**Goal:** Create a page that visually responds to user interaction and/or time-based triggers using only CSS.
 
----
+styles.css
 
-## 📚✨ Part 2: JavaScript Functions — Scope, Parameters & Return Values
+/*general page styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background: #fdfdfd;
+}
 
-Now it’s time to dive deeper into how **functions** actually work. In this section:
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
 
-* Write several custom functions that take in **parameters** and return **useful values**
-* Demonstrate understanding of **local vs global scope**
-* Show how functions can be reused to control animation, trigger DOM changes, or calculate values
+section {
+  margin: 50px 0;
+}
 
-**Goal:** Show functional thinking by building small, reusable pieces of logic that clearly use parameters, return values, and demonstrate scope awareness.
+ /* Enroll in a Course (Button Styling)*/
+ .btn-hover {
+  background: #2980b9;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.5s, transform 0.3s;
+  cursor: pointer;
+}
+.btn-hover:hover {
+  background: #27ae60;
+  transform: scale(1.1);
+}
 
----
+/* Highlight box animation */
+.fade-box {
+  width: 100px;
+  height: 100px;
+  background: #e74c3c;
+  margin: 20px auto;
+  animation: fadeSlide 4s infinite alternate;
+}
 
-## 🎨🎬 Part 3: Combining CSS Animations with JavaScript
+@keyframes fadeSlide {
+  0% { opacity: 0.2; transform: translateX(0); }
+  100% { opacity: 1; transform: translateX(150px); }
+}
 
-Here’s the real magic—combine the two worlds!
+/*Course Progress Tracker*/
+.progress-container {
+  width: 80%;
+  max-width: 500px;
+  height: 30px;
+  background: #ddd;
+  border-radius: 15px;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 2px solid #2980b9;
+}
 
-Use JavaScript to **trigger** CSS animations dynamically. Think along the lines of:
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: #27ae60;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s;
+}
 
-* A button that animates a box when clicked
-* A card flip animation on hover or click
-* A loading animation that starts/stops based on user input
-* A popup/modal that slides in and fades out based on events
+/*  New Lesson Notification */
+#animatedBox {
+  width: 160px;
+  height: 100px;
+  background: #8e44ad;
+  margin: 20px auto;
+  border-radius: 12px;
+  opacity: 0.9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+}
 
-**Goal:** Use JavaScript to **add/remove classes** or modify styles dynamically to trigger CSS animations. Bonus if you make it reusable with functions!
+/* Bounce effect triggered via JS */
+.animate {
+  animation: bounce 2s ease-in-out forwards;
+}
 
----
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-100px); background: #f39c12; }
+  100% { transform: translateY(0); background: #8e44ad; }
+}
 
-## Deliverables
+/* Certificate Pop-up*/
+#certificateModal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
 
-Submit a project folder that includes:
+.certificate-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  animation: popIn 0.8s ease;
+}
 
-* `index.html` — Your structured content
-* `styles.css` — All your transitions and keyframe animations
-* `script.js` — Your functional logic demonstrating scope, parameters, return values, and animation triggers
+.certificate-content button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #27ae60;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.certificate-content button:hover {
+  background: #2ecc71;
+}
 
-Each part of the assignment should be clearly labeled and commented to show your understanding.
+/* Pop-in animation */
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
 
----
 
-## Outcome
+script.js
 
-You’ll be evaluated on:
 
-* Use of CSS transitions and animations to enhance UI
-* Quality and clarity of JavaScript functions (with parameters and return values)
-* Effective integration of CSS and JS for interactive effects
-* Code readability, modularity, and documentation
-* Creativity and user experience
+/*Study Helper Tool
+   Demonstrates Parameters, Return Values, and Scope*/
+   
+function square(num) {
+  return num * num;
+}
+
+let globalMessage = "Global scope: available anywhere in the portal.";
+
+function showSquare(value) {
+  let localMessage = "Local scope: only inside this study tool.";
+
+  let result = square(value);
+
+  document.getElementById("output").innerHTML =
+    `Answer: ${value} × ${value} = <b>${result}</b><br>` +
+    globalMessage + "<br>" +
+    localMessage;
+}
+
+/*Course Progress Tracker
+   Simulates progress filling up like a course tracker*/
+   
+function startProgress() {
+  let bar = document.getElementById("progressBar");
+  let width = 0;
+
+  bar.style.width = "0%";
+  bar.innerHTML = "";
+
+  let interval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(interval);
+      bar.innerHTML = "Completed!";
+      showCertificate(); // Show certificate modal
+    } else {
+      width++;
+      bar.style.width = width + "%";
+      bar.innerHTML = width + "%";
+    }
+  }, 50);
+}
+
+/* Certificate Pop-up*/
+
+function showCertificate() {
+  document.getElementById("certificateModal").style.display = "flex";
+}
+
+function closeCertificate() {
+  document.getElementById("certificateModal").style.display = "none";
+}
+
+/* New Lesson Notification*/
+
+function triggerBoxAnimation() {
+  const box = document.getElementById("animatedBox");
+  box.innerHTML = " New Lesson Available!";
+
+  box.classList.remove("animate");
+  void box.offsetWidth; // reflow trick
+  box.classList.add("animate");
+}
