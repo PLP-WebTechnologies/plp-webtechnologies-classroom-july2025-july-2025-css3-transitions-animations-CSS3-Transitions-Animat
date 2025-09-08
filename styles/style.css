@@ -1,0 +1,95 @@
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===============================
+   Part 1: CSS Transitions & Animations
+   =============================== */
+
+/* Button with hover effects */
+#animate-btn {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background: #ff9800;
+  color: white;
+  transition: all 0.3s ease; /* smooth transition */
+  animation: glow 2s infinite; /* continuous glowing */
+}
+
+#animate-btn:hover {
+  background: #ffc107;
+  transform: scale(1.1);
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #ff9800; }
+  50% { box-shadow: 0 0 20px #ffc107; }
+  100% { box-shadow: 0 0 5px #ff9800; }
+}
+
+/* ===============================
+   Gift Flip Animation (Part 3)
+   =============================== */
+.gift {
+  width: 180px;
+  height: 180px;
+  perspective: 1000px;
+  margin-top: 30px;
+}
+
+.gift-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.gift.open .gift-inner {
+  transform: rotateY(180deg);
+}
+
+.gift-front, .gift-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  background: #ff4081;
+  color: white;
+}
+
+.gift-back {
+  background: #4caf50;
+  transform: rotateY(180deg);
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0); }
+}
+
+.gift.wiggle {
+  animation: wiggle 0.6s ease;
+}
