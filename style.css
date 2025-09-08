@@ -1,0 +1,104 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background: #f4f4f9;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+/* --- Part 1: CSS Animations --- */
+
+/* Button hover animation */
+.animated-btn {
+  padding: 12px 20px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.animated-btn:hover {
+  transform: scale(1.1);
+  background: #0055cc;
+}
+
+/* Box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 20px auto;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* --- Part 3: JS + CSS Integration --- */
+
+/* Hidden modal */
+.hidden {
+  display: none;
+}
+
+/* Modal is hidden by default */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+
+  /* Start hidden */
+  opacity: 0;
+  pointer-events: none; /* prevents clicking background */
+  transition: opacity 0.3s ease;
+}
+
+/* Active modal (shown via JS) */
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(100px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Animate content in only when modal is active */
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Animations for modal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Box active animation triggered by JS */
+.box.active {
+  background: limegreen;
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
