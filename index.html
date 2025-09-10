@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS & JavaScript Interactive Experience</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Web Pages to Life</h1>
+      <p>CSS3 Animations & JavaScript Functions</p>
+    </header>
+
+    <!-- Part 1: CSS3 Transitions and Animations -->
+    <section class="section">
+      <h2>Part 1: CSS3 Transitions and Animations</h2>
+      <p>These elements use pure CSS for animations and transitions.</p>
+
+      <h3>Button Hover Effects</h3>
+      <div class="button-group">
+       <button class="btn-hover">Hover Me</button>
+      </div>
+
+      <h3>Continuous Animation</h3>
+      <div class="animated-element"></div>
+      
+      <h3>Fade In/Out Animation</h3>
+      <div class="fade-box">I fade in & out</div>
+
+      <h3>Scroll-triggered Animation</h3>
+      <div class="slide-in">
+        <p>This element slides in when it comes into view.</p>
+      </div>
+
+
+    </section>
+
+    <!-- Part 2: JavaScript Functions -->
+    <section class="section">
+      <h2>Part 2: JavaScript Functions</h2>
+      <p>These demonstrate JavaScript functions with parameters, return values, and scope awareness.</p>
+
+      <div class="controls">
+        <button class="btn btn-hover" onclick="calculateArea(5)">Calculate Area</button>
+        <button class="btn btn-hover" onclick="stringManipulation()">String Manipulation</button>
+        <button class="btn btn-hover" onclick="scopeDemonstration()">Scope Demonstration</button>
+      </div>
+
+      <div id="output"></div>
+    </section>
+
+    <!-- Part 3: Combining CSS Animations with JavaScript -->
+    <section class="section">
+      <h2>Part 3: Combining CSS Animations with JavaScript</h2>
+      <p>JavaScript is used to trigger and control CSS animations.</p>
+
+      <h3>Card Flip Animation</h3>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Front</div>
+          <div class="card-back">Back</div>
+        </div>
+      </div>
+
+      <h3>Animation Controls</h3>
+      <div class="controls">
+        <button class="btn btn-hover" onclick="startAnimation()">Start Animation</button>
+        <button class="btn btn-hover" onclick="stopAnimation()">Stop Animation</button>
+        <button class="btn btn-hover" onclick="toggleModal()">Toggle Modal</button>
+      </div>
+
+      <div class="animation-box" id="anim-box"></div>
+
+      <h3>Popup/Modal</h3>
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <h3>Animated Modal</h3>
+          <p>This modal slides in and fades with animation.</p>
+          <button class="btn btn-hover" onclick="toggleModal()">Close</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+
