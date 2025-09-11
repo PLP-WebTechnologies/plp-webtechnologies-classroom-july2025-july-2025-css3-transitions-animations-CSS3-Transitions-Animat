@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><!-- Sets character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Makes site responsive -->
+  <title>Web Animations Assignment</title>
+  <link rel="stylesheet" href="styles.css"><!-- Link external CSS -->
+</head>
+<body>
+  <header>
+    <h1>🎬 Web Animations Assignment</h1>
+    <p>Part 1: CSS Animations | Part 2: JS Functions | Part 3: Combined</p>
+  </header>
+
+  <!-- ==========================
+       PART 1: CSS TRANSITIONS & ANIMATIONS
+  =========================== -->
+  <section id="css-animations">
+    <h2>Part 1: CSS3 Transitions & Animations</h2>
+    <p>Hover the button and watch the box pulse continuously.</p>
+    <button class="animated-btn">Hover Me</button> <!-- Button with hover effect -->
+    <div class="box"></div> <!-- Box with continuous pulsing animation -->
+  </section>
+
+  <!-- ==========================
+       PART 2: JAVASCRIPT FUNCTIONS
+  =========================== -->
+  <section id="js-functions">
+    <h2>Part 2: JavaScript Functions</h2>
+    <p>This demonstrates parameters, return values, and scope.</p>
+    <p id="sum-output">Result will appear here...</p> <!-- Output container -->
+    <button onclick="showSum(5, 7)">Calculate 5 + 7</button> <!-- Calls JS function -->
+  </section>
+
+  <!-- ==========================
+       PART 3: COMBINING CSS & JS
+  =========================== -->
+  <section id="combined">
+    <h2>Part 3: Combining CSS & JavaScript</h2>
+    <p>Click the button to trigger a CSS animation dynamically.</p>
+    <button onclick="toggleAnimation()">Animate Box</button> <!-- JS toggles CSS animation -->
+    <div id="animateBox" class="animate-target"></div> <!-- Target box for animation -->
+  </section>
+
+  <footer>
+    <p>Created by Student | Web Animation Assignment</p>
+  </footer>
+
+  <!-- External JS file -->
+  <script src="script.js"></script>
+</body>
+</html>
