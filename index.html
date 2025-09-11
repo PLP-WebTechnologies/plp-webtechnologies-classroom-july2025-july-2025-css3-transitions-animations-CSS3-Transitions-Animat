@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A web page demonstrating various CSS3 and JavaScript animations including 3D card flip, animated SVG, progress bar, modal, loading spinner, and bounce animation.">
+    <meta name="keywords" content="CSS3, JavaScript, Animations, 3D Card Flip, SVG Animation, Progress Bar, Modal, Loading Spinner, Bounce Animation">  
+    <meta name="author" content="Aghason Emmanuel">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6366f1">
+    <meta property="og:title" content="CSS3 & JavaScript Animations">
+    <meta property="og:description" content="A web page demonstrating various CSS3 and JavaScript animations including 3D card flip, animated SVG, progress bar, modal, loading spinner, and bounce animation.">
+    <meta property="og:type" content="website">
+    <title>Interactive Web Experience</title>
+     <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-theme="light">
+    <!-- Animated Background Particles -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">WebMaster Pro</div>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+            <span class="sr-only">Toggle theme</span>
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- CSS Transitions & Keyframe Animations -->
+        <section class="glass-card">
+            <h2>CSS3 Animations</h2>
+            <p>Hover effects and keyframe animations demonstrate pure CSS magic.</p>
+            
+            <div class="animated-box" onclick="triggerRandomAnimation(this)">
+                Click Me!
+            </div>
+            
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p>Front Side</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Back Side</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated SVG -->
+            <svg class="animated-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle class="svg-path" cx="50" cy="50" r="40" stroke="#06b6d4" stroke-width="3" fill="none"/>
+            </svg>
+        </section>
+
+        <!-- JavaScript Functions Demo -->
+        <section class="glass-card">
+            <h2>JavaScript Functions</h2>
+            <p>Demonstrating scope, parameters, and return values.</p>
+            
+            <button class="btn" onclick="demonstrateScope()">Test Scope</button>
+            <button class="btn" onclick="calculateAndDisplay()">Calculate Values</button>
+            <button class="btn" onclick="showModal()">Open Modal</button>
+            
+            <div id="function-output"></div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <button class="btn" onclick="animateProgress()">Animate Progress</button>
+        </section>
+
+        <!-- Combined CSS + JavaScript -->
+        <section class="glass-card">
+            <h2>Interactive Animations</h2>
+            <p>JavaScript controlling CSS animations dynamically.</p>
+            
+            <button class="btn" onclick="startLoadingSequence()">Start Loading</button>
+            <button class="btn" onclick="createParticleExplosion(this)">Particle Effect</button>
+            <button class="btn" onclick="morphCard(this)">Morph Card</button>
+            
+            <div class="spinner" id="loadingSpinner"></div>
+            
+            <div id="particle-container" style="position: relative; height: 100px; overflow: hidden;"></div>
+        </section>
+
+        <!-- Advanced Features -->
+        <section class="glass-card">
+            <h2>Advanced Features</h2>
+            <p>Glassmorphism, 3D transforms, and micro-interactions.</p>
+            
+            <button class="btn" onclick="create3DEffect(this)">3D Transform</button>
+            <button class="btn" onclick="triggerMicroInteraction(this)">Micro Animation</button>
+            <button class="btn" onclick="waveEffect()">Wave Propagation</button>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3>Function Demonstration</h3>
+            <p>This modal demonstrates JavaScript function scope and DOM manipulation.</p>
+            <div id="modal-content-dynamic"></div>
+            <button class="btn" onclick="updateModalContent()">Update Content</button>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
