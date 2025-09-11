@@ -1,0 +1,51 @@
+/* ================= Part 1: CSS Transitions and Animations ================= */
+
+/* Button Hover Effect */
+.btn-hover {
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.5s, transform 0.3s; /* transition effect */
+  cursor: pointer;
+}
+.btn-hover:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+/* Continuous Animation using @keyframes */
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  margin: 20px 0;
+  border-radius: 8px;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+/* ================= Part 3: Box Animation Triggered by JS ================= */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: transform 1s, background-color 1s;
+}
+
+/* This class will be toggled by JS */
+.box.animate {
+  transform: rotate(360deg) scale(1.2);
+  background-color: orange;
+}
