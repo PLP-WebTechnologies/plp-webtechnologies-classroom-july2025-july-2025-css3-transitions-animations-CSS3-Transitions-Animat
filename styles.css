@@ -1,0 +1,70 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+  font-family: Arial, sans-serif; /* Sets clean font */
+  line-height: 1.6;
+  text-align: center; /* Centers text */
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f9; /* Light background color */
+}
+
+header {
+  background: #333; /* Dark header */
+  color: white; /* White text */
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 10px; /* Space under headings */
+}
+
+/* ========== PART 1: CSS ANIMATIONS ========== */
+/* Button hover transition */
+.animated-btn {
+  background: #0077cc;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s, background 0.3s; /* Smooth animation */
+  cursor: pointer;
+}
+.animated-btn:hover {
+  transform: scale(1.2); /* Enlarges on hover */
+  background: #005fa3;  /* Darker shade on hover */
+}
+
+/* Pulsing box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  background: #ff6600; /* Orange */
+  animation: pulse 3s infinite; /* Continuous pulsing */
+}
+
+/* Keyframe animation for pulsing */
+@keyframes pulse {
+  0% { transform: scale(1); background: #ff6600; }  /* Start size */
+  50% { transform: scale(1.2); background: #ff9900; } /* Bigger + lighter */
+  100% { transform: scale(1); background: #ff6600; } /* Back to normal */
+}
+
+/* ========== PART 3: COMBINED ANIMATION (triggered by JS) ========== */
+.animate-target {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  background: #28a745; /* Green */
+}
+
+/* This class is toggled by JavaScript */
+.animate-target.active {
+  animation: slide 2s forwards; /* Runs only when 'active' is applied */
+}
+
+/* Keyframes for slide animation */
+@keyframes slide {
+  from { transform: translateX(0); opacity: 0.5; }  /* Start left */
+  to { transform: translateX(200px); opacity: 1; }  /* Move right */
+}
