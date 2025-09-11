@@ -1,0 +1,68 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f9;
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+/* ========== PART 1: CSS ANIMATIONS ========== */
+/* Button hover transition */
+.animated-btn {
+  background: #0077cc;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+.animated-btn:hover {
+  transform: scale(1.2);
+  background: #005fa3;
+}
+
+/* Pulsing box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  background: #ff6600;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); background: #ff6600; }
+  50% { transform: scale(1.2); background: #ff9900; }
+  100% { transform: scale(1); background: #ff6600; }
+}
+
+/* ========== PART 3: COMBINED ANIMATION (triggered by JS) ========== */
+.animate-target {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  background: #28a745;
+}
+
+/* This class will be toggled by JavaScript */
+.animate-target.active {
+  animation: slide 2s forwards;
+}
+
+@keyframes slide {
+  from { transform: translateX(0); opacity: 0.5; }
+  to { transform: translateX(200px); opacity: 1; }
+}
