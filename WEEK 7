@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Page</h1>
+    </header>
+
+    <section class="buttons-section">
+        <button id="animateBtn">Animate Box</button>
+        <button id="flipBtn">Flip Card</button>
+        <button id="popupBtn">Show Popup</button>
+    </section>
+
+    <section class="animation-section">
+        <div id="box" class="box"></div>
+        <div class="card-container">
+            <div id="card" class="card">
+                <div class="front">Front</div>
+                <div class="back">Back</div>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="popup">
+        <p>This is a popup! Click outside to close.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* ------------------------
+ Part 1: CSS Transitions & Animations
+------------------------ */
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header h1 {
+    margin: 20px;
+    color: #333;
+}
+
+/* Buttons Styling */
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+/* Box Animation */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6b6b;
+    margin: 30px auto;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.box.animate {
+    transform: translateY(-50px) rotate(360deg);
+    background-color: #4caf50;
+}
+
+/* Card Flip Animation */
+.card-container {
+    perspective: 1000px;
+    width: 150px;
+    margin: 20px auto;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    color: white;
+}
+
+.card .front {
+    background-color: #3498db;
+}
+
+.card .back {
+    background-color: #e74c3c;
+    transform: rotateY(180deg);
+}
+
+/* Popup Animation */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 10;
+}
+
+.popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Background overlay when popup is active */
+body.popup-active::before {
+    content: "";
+    position: fixed;
+    top:0; left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 5;
+}
+/* ------------------------
+ Part 2: JavaScript Functions
+------------------------ */
+
+/* Helper function to toggle classes */
+function toggleAnimation(elementId, className) {
+    const element = document.getElementById(elementId);
+    element.classList.toggle(className);
+}
+
+/* Function to show popup */
+function showPopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.add('show');
+    document.body.classList.add('popup-active');
+}
+
+/* Function to hide popup */
+function hidePopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove('show');
+    document.body.classList.remove('popup-active');
+}
+
+/* ------------------------
+ Part 3: Event Listeners for Interactivity
+------------------------ */
+
+/* Animate Box */
+document.getElementById('animateBtn').addEventListener('click', function() {
+    toggleAnimation('box', 'animate');
+});
+
+/* Flip Card */
+document.getElementById('flipBtn').addEventListener('click', function() {
+    toggleAnimation('card', 'flip');
+});
+
+/* Show Popup */
+document.getElementById('popupBtn').addEventListener('click', showPopup);
+
+/* Hide Popup when clicking outside */
+window.addEventListener('click', function(e) {
+    const popup = document.getElementById('popup');
+    if (popup.classList.contains('show') && !popup.contains(e.target) && e.target.id !== 'popupBtn') {
+        hidePopup();
+    }
+});
