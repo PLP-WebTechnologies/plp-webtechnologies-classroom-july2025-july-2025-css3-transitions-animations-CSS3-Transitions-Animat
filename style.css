@@ -1,0 +1,61 @@
+/* --- General Styling --- */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f7f7f7;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+/* --- Part 1: CSS Transitions + Keyframes --- */
+
+/* Button hover effect */
+.fancy-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  background: #4cafef;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.fancy-btn:hover {
+  background: #0077cc;
+  transform: scale(1.1);
+}
+
+/* Fade animation */
+.fade-box {
+  margin: 30px auto;
+  width: 200px;
+  padding: 20px;
+  background: #ffcc80;
+  border-radius: 12px;
+  animation: fadeInOut 4s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* --- Part 3: JS-triggered CSS Animation --- */
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: #66bb6a;
+  border-radius: 12px;
+  transition: transform 1s ease;
+}
+
+.box.animate {
+  transform: rotate(360deg) scale(1.3);
+  background: #2e7d32;
+}
