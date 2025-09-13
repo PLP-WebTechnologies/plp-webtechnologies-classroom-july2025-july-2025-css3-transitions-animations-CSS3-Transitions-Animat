@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: aquamarine;
+}
+
+#myButton {
+    display:flex;
+    margin-top: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h6 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: rgb(105, 11, 74);
+}
+
+.p {
+    margin-bottom: 50px;
+    font-size: 1em;
+    color: rgb(105, 11, 74);
+}
+
+.f {
+    margin-bottom: 20px;
+}
+
+.hoverbutton{
+    background-color: lightblue;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+.hoverbutton:hover {
+    background-color: deepskyblue;
+    transform: scale(1.05);
+}
+
+#colorBox {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: slide-in 0.5s ease;
+}
+
+
+#colorBox:hover .hover-image {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    
+}
+
+.ball:hover {
+    animation: moveRight 2s infinite alternate;
+}
+@keyframes moveRight {
+    0% { transform: translateX(0); background-color: red; }
+    100% { transform: translateX(300px); background-color: orange; }
+}
+
+    
