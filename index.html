@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mechanics of Motion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1><span class="gradient-text">The Mechanics of Motion</span></h1>
+            <p>Bringing Web Pages to Life with CSS & JavaScript</p>
+        </header>
+
+        <section>
+            <h2>CSS3 Transitions and Animations for Dynamic Styling Effects</h2>
+            <p>This section uses only CSS to create car-themed effects. Hover the button to feel the engine rev, and see the car icon pulse.</p>
+            <div class="content-center">
+                <button class="magic-button">Engine warming up</button>
+                <div class="pulsing-car">🚘</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>JavaScript Functions — Scope, Parameters & Return Values</h2>
+            <p>Here, we use JavaScript functions for driving-related calculations, demonstrating scope, parameters, and return values.</p>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Scope Demonstration</h3>
+                    <p>Run a diagnostic on the car's systems.</p> 
+                    <p><i>(See the browser console [use shortcut key: F12] for the results.)</i></p>
+                    <button id="scope-button" class="magic-button" style="width:100%; background-color: #f59e0b;">Run On-Board Diagnostic</button>
+                </div>
+                
+                <div class="card">
+                     <h3>Mileage Calculation</h3>
+                     <p>This function calculates fuel efficiency based on distance traveled and fuel consumed.</p>
+                     <div class="input-group">
+                        <input type="number" id="distance-input" value=" " placeholder="Distance (miles)">
+                        <span>/</span>
+                        <input type="number" id="fuel-input" value=" " placeholder="Fuel (gallons)">
+                     </div>
+                     <button id="calculate-button" class="magic-button" style="width:100%; background-color: #f59e0b;">Calculate MPG</button>
+                     <p class="result-text">Efficiency: <span id="mileage-result" class="result-value"> </span></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Combining CSS Animations with JavaScript</h2>
+            <p>Finally, we use a JavaScript function to dynamically add a CSS class, triggering a keyframe animation that sends the car driving across the screen.</p>
+            <div class="text-center">
+                <button id="animate-button" class="magic-button" style="background: linear-gradient(to left, #f97316, #f59e0b)">Begin Drive</button>
+            </div>
+            <div id="car" class="car">🚗</div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
