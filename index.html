@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Playground - Stephen Kingori</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#FF6B6B',
+                        accent: '#4ECDC4',
+                        warning: '#FFE66D'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen">
+    
+    <!-- Header with Animated Title -->
+    <header class="text-center py-8">
+        <h1 id="mainTitle" class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4">
+            Animation Playground
+        </h1>
+        <p class="text-gray-600 text-lg">Bringing Web Pages to Life with CSS & JavaScript</p>
+        <p class="text-sm text-gray-500 mt-2">Created by Stephen Kingori - PLP Software Engineering</p>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        
+        <!-- Part 1: CSS3 Transitions and Animations -->
+        <section class="mb-16 bg-white rounded-2xl shadow-xl p-8 animation-section">
+            <h2 class="section-title text-3xl font-bold mb-8 text-gray-800">
+                🎨 Part 1: CSS3 Transitions & Animations
+            </h2>
+            
+            <!-- Animated Buttons Showcase -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold mb-6 text-gray-700">Interactive Button Effects</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <button class="btn-hover-scale">Scale Effect</button>
+                    <button class="btn-hover-glow">Glow Effect</button>
+                    <button class="btn-hover-flip">Flip Effect</button>
+                    <button class="btn-hover-slide">Slide Effect</button>
+                    <button class="btn-hover-bounce">Bounce Effect</button>
+                    <button class="btn-hover-rainbow">Rainbow Effect</button>
+                    <button class="btn-hover-shake">Shake Effect</button>
+                    <button class="btn-hover-pulse">Pulse Effect</button>
+                </div>
+            </div>
+
+            <!-- Continuous Animations -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold mb-6 text-gray-700">Continuous Keyframe Animations</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="floating-box">Floating</div>
+                    <div class="rotating-box">Rotating</div>
+                    <div class="pulsing-box">Pulsing</div>
+                    <div class="bouncing-box">Bouncing</div>
+                    <div class="sliding-box">Sliding</div>
+                </div>
+            </div>
+
+            <!-- CSS Animation Loading Indicators -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-gray-700">Pure CSS Loading Animations</h3>
+                <div class="flex justify-center gap-8 items-center">
+                    <div class="spinner-dots">
+                        <div></div><div></div><div></div>
+                    </div>
+                    <div class="spinner-circle"></div>
+                    <div class="spinner-bars">
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: JavaScript Functions -->
+        <section class="mb-16 bg-white rounded-2xl shadow-xl p-8 animation-section">
+            <h2 class="section-title text-3xl font-bold mb-8 text-gray-800">
+                📚 Part 2: JavaScript Functions - Scope, Parameters & Return Values
+            </h2>
+            
+            <!-- Function Demonstration Controls -->
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Parameter and Return Value Demo -->
+                <div class="function-demo-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Function Parameters & Return Values</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-2">Calculate Circle Area:</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="radiusInput" placeholder="Radius" class="px-3 py-2 border rounded-lg text-base">
+                                <button onclick="demonstrateCalculation()" class="btn-primary">Calculate</button>
+                            </div>
+                            <div id="areaResult" class="mt-2 text-sm text-gray-600"></div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-2">Generate Random Color:</label>
+                            <button onclick="demonstrateColorGeneration()" class="btn-secondary">Generate Color</button>
+                            <div id="colorResult" class="mt-2 p-4 rounded-lg border"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scope Demonstration -->
+                <div class="function-demo-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Variable Scope Demonstration</h3>
+                    <div class="space-y-4">
+                        <button onclick="demonstrateScope()" class="btn-accent">Test Variable Scope</button>
+                        <div id="scopeResult" class="bg-gray-50 p-4 rounded-lg text-sm font-mono"></div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-2">Function Counter (Local Scope):</label>
+                            <button onclick="incrementLocalCounter()" class="btn-warning">Increment Local</button>
+                            <span id="localCounterDisplay" class="ml-2 font-semibold">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reusable Function Examples -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Reusable Utility Functions</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <button onclick="animateWithFunction('bounce')" class="btn-utility">Bounce Animation</button>
+                    <button onclick="animateWithFunction('fadeIn')" class="btn-utility">Fade In</button>
+                    <button onclick="animateWithFunction('slideLeft')" class="btn-utility">Slide Left</button>
+                </div>
+                <div id="functionAnimationTarget" class="w-24 h-24 bg-gradient-to-r from-pink-400 to-purple-500 rounded-lg mx-auto mt-6">
+                    Target Element
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: CSS + JavaScript Integration -->
+        <section class="mb-16 bg-white rounded-2xl shadow-xl p-8 animation-section">
+            <h2 class="section-title text-3xl font-bold mb-8 text-gray-800">
+                🎬 Part 3: CSS Animations + JavaScript Integration
+            </h2>
+            
+            <!-- Interactive Animation Controls -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- Dynamic Box Animator -->
+                <div class="interactive-demo">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Dynamic Box Animator</h3>
+                    <div class="controls-grid">
+                        <button onclick="triggerAnimation('box1', 'spin')" class="control-btn">Spin</button>
+                        <button onclick="triggerAnimation('box1', 'flip')" class="control-btn">Flip</button>
+                        <button onclick="triggerAnimation('box1', 'wobble')" class="control-btn">Wobble</button>
+                        <button onclick="triggerAnimation('box1', 'zoomIn')" class="control-btn">Zoom In</button>
+                    </div>
+                    <div id="box1" class="animated-box">Click buttons above!</div>
+                </div>
+
+                <!-- Card Flip Interactive -->
+                <div class="interactive-demo">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Interactive Card Flip</h3>
+                    <div class="flip-card-container">
+                        <div id="flipCard" class="flip-card" onclick="toggleCardFlip()">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Front Side</h4>
+                                    <p>Click to flip!</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h4>Back Side</h4>
+                                    <p>Click again!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Animation System -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Dynamic Modal System</h3>
+                <div class="flex gap-4 justify-center">
+                    <button onclick="showModal('slideIn')" class="btn-modal">Slide In Modal</button>
+                    <button onclick="showModal('fadeIn')" class="btn-modal">Fade In Modal</button>
+                    <button onclick="showModal('zoomIn')" class="btn-modal">Zoom In Modal</button>
+                </div>
+            </div>
+
+            <!-- Progress Bar Animation -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Animated Progress System</h3>
+                <div class="space-y-4">
+                    <button onclick="animateProgress()" class="btn-progress">Start Loading Animation</button>
+                    <div class="progress-container">
+                        <div id="progressBar" class="progress-bar"></div>
+                        <span id="progressText" class="progress-text">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Playground -->
+        <section class="mb-16 bg-white rounded-2xl shadow-xl p-8 animation-section">
+            <h2 class="section-title text-3xl font-bold mb-8 text-gray-800">
+                🎮 Interactive Animation Playground
+            </h2>
+            
+            <div class="playground-container">
+                <div class="playground-controls">
+                    <h3 class="text-lg font-semibold mb-4">Create Your Own Animation</h3>
+                    <div class="control-group">
+                        <label>Animation Type:</label>
+                        <select id="animationType" class="form-select">
+                            <option value="bounce">Bounce</option>
+                            <option value="rotate">Rotate</option>
+                            <option value="scale">Scale</option>
+                            <option value="slide">Slide</option>
+                            <option value="flip">Flip</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Duration (seconds):</label>
+                        <input type="range" id="durationSlider" min="0.5" max="3" step="0.1" value="1" class="form-range">
+                        <span id="durationValue">1.0s</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Color:</label>
+                        <input type="color" id="colorPicker" value="#5D5CDE" class="form-color">
+                    </div>
+                    <button onclick="createCustomAnimation()" class="btn-create">Apply Animation</button>
+                </div>
+                
+                <div class="playground-stage">
+                    <div id="playgroundElement" class="playground-element">
+                        Animated Element
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="modalContent" class="modal-content">
+            <h3>Animated Modal</h3>
+            <p>This modal demonstrates dynamic CSS animations triggered by JavaScript!</p>
+            <button onclick="hideModal()" class="btn-close">Close Modal</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <!-- JavaScript Integration -->
+   <script type="module" src="/script.js"></script>
+</body>
+</html>
