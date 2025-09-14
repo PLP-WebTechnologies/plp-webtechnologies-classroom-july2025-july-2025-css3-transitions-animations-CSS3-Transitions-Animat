@@ -1,0 +1,32 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+/* Box to animate */
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  margin: 20px auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+/* Animation keyframes */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-100px); }
+  100% { transform: translateY(0); }
+}
+
+/* Class added when animation is triggered */
+.animate {
+  animation: bounce 1s ease-in-out;
+  background-color: tomato;
+}
+
+  
