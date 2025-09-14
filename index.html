@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page with CSS & JS Interaction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="container">
+        <h1>Web Page with CSS & JS</h1>
+        <p>
+            This page demonstrates the combination of CSS animations with JavaScript logic to create a dynamic and interactive user experience.
+        </p>
+    </header>
+
+    <main class="container">
+        <!-- Part 1: CSS3 Transitions and Animations -->
+        <h2>Part 1: CSS3 Animations & Transitions</h2>
+        <div class="card">
+            <p>Hover over this button to see a smooth transition effect.</p>
+            <button class="styled-button" id="transitionButton">Hover Me</button>
+        </div>
+
+        <div class="card">
+            <p>This box has a continuous CSS keyframe animation.</p>
+            <div class="animated-box"></div>
+        </div>
+
+        <!-- Part 2 & 3: JavaScript Functions & Integration -->
+        <h2>Part 2 & 3: JS Functions & Integration</h2>
+        <div class="card">
+            <p>Click the button below to trigger a slide-in animation using JavaScript to toggle a CSS class.</p>
+            <button class="styled-button" id="triggerAnimation">Trigger Animation</button>
+        </div>
+
+        <div class="animated-card" id="jsTriggeredCard">
+            <h3>I slid into view!</h3>
+            <p>This card was hidden until the button above was clicked.</p>
+        </div>
+
+        <div class="card">
+            <p>
+                <strong>JavaScript Function Demo:</strong> Click the button to calculate a result using a function that takes parameters and returns a value.
+            </p>
+            <button class="styled-button" id="calculateButton">Calculate Value</button>
+            <div id="calculationResult" class="result-box"></div>
+        </div>
+
+        <div class="card">
+            <p>
+                <strong>JavaScript Scope Demo:</strong> Click the button to see the difference between global and local scope.
+            </p>
+            <button class="styled-button" id="scopeButton">Show Scope</button>
+            <div id="scopeResult" class="result-box"></div>
+        </div>
+    </main>
+
+</body>
+</html>

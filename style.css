@@ -1,0 +1,108 @@
+
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #f0f0f0;
+    --accent-color: #ff6384;
+    --text-color: #333;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/*Part 1: CSS3 Transitions and Animations */
+
+/* Button Hover Transition */
+.styled-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Continuous Keyframe Animation */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(108, 99, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+}
+
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    margin: 0 auto;
+    animation: pulse 2s infinite; /* Apply the animation */
+}
+
+/* Part 3: Combining CSS Animations with JavaScript */
+
+/* Initial state of the card to be animated by JS */
+.animated-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    text-align: center;
+    /* We hide the card initially */
+    transform: translateY(50px) scale(0.9);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Class that will be added by JavaScript to trigger the animation */
+.animated-card.is-visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.result-box {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    color: var(--text-color);
+    text-align: left;
+}
