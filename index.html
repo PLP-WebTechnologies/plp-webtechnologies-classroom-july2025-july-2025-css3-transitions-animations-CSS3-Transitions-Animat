@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Interactive Light Bulb</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Interactive Light Bulb</h1>
+      <p>Click the buttons to turn the light on and off</p>
+
+      <div class="bulb-container">
+        <div class="bulb">💡</div>
+      </div>
+
+      <div class="controls">
+        <button id="toggleBtn" class="btn btn-on">Turn On</button>
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+
+      <div id="statusBar" class="status">The light is currently OFF</div>
+
+      <div class="click-count">
+        You've clicked the buttons <span class="counter">0</span> times
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
