@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations & JavaScript Interactions</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS Animations & JavaScript Interactions</h1>
+            <p>Explore CSS transitions, animations, and how to control them with JavaScript</p>
+        </header>
+        
+        <!-- Part 1: CSS Animations -->
+        <section class="section">
+            <h2>Part 1: CSS3 Transitions and Animations</h2>
+            <p>These elements are styled with CSS transitions and animations. Hover or click to see effects.</p>
+            
+            <div class="animation-demo">
+                <button class="hover-button">Hover Me</button>
+                <div class="demo-box pulse">Pulse</div>
+                <div class="demo-box slide">Slide</div>
+                <div class="demo-box fade">Fade</div>
+            </div>
+        </section>
+        
+        <!-- Part 2: JavaScript Functions -->
+        <section class="section">
+            <h2>Part 2: JavaScript Functions</h2>
+            <p>These demonstrate JavaScript functions with parameters, return values, and scope.</p>
+            
+            <div class="js-demo">
+                <div>
+                    <h3>String Reverser</h3>
+                    <div class="input-group">
+                        <input type="text" id="reverseInput" placeholder="Enter text to reverse">
+                        <button onclick="reverseString()">Reverse</button>
+                    </div>
+                    <div class="output" id="reverseOutput">Output will appear here</div>
+                </div>
+                
+                <div>
+                    <h3>Number Multiplier</h3>
+                    <div class="input-group">
+                        <input type="number" id="num1" placeholder="First number">
+                        <input type="number" id="num2" placeholder="Second number">
+                        <button onclick="multiplyNumbers()">Multiply</button>
+                    </div>
+                    <div class="output" id="multiplyOutput">Output will appear here</div>
+                </div>
+                
+                <div>
+                    <h3>Scope Demonstration</h3>
+                    <button onclick="demonstrateScope()">Run Scope Demo</button>
+                    <div class="output" id="scopeOutput">Output will appear here</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Part 3: Combined CSS & JavaScript -->
+        <section class="section">
+            <h2>Part 3: Combining CSS Animations with JavaScript</h2>
+            <p>Use JavaScript to trigger and control CSS animations dynamically.</p>
+            
+            <div class="combined-demo">
+                <div class="animation-controls">
+                    <button onclick="fadeIn()">Fade In</button>
+                    <button onclick="spin()">Spin</button>
+                    <button onclick="grow()">Grow</button>
+                    <button onclick="shrink()">Shrink</button>
+                    <button onclick="reset()">Reset</button>
+                </div>
+                
+                <div class="animation-target animate-box" id="animationTarget">
+                    Animate Me!
+                </div>
+                
+                <h3>Card Flip Animation</h3>
+                <p>Click the card to flip it:</p>
+                <div class="card-container">
+                    <div class="card" id="card" onclick="flipCard()">
+                        <div class="card-front">Front</div>
+                        <div class="card-back">Back</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
