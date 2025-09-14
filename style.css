@@ -1,0 +1,37 @@
+/* General styles */
+body {
+    font-family: Arail, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Part 1: Button hover effect with transition */
+#hoverBtn {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.5s ease; 
+}
+#hoverBtn:hover {
+    background-color: darkblue;
+}
+/* Part 3: Box that animates when class is added */
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: tomato;
+}
+
+/* Animation keyframes */
+@keyframes slideRight {
+    from {transform: translateX(0); }
+    to { transform: translateX(200px); }
+}
+
+/* Class to Trigger animation */
+.animate {
+    animation: slideRight 1s forwards;
+}
