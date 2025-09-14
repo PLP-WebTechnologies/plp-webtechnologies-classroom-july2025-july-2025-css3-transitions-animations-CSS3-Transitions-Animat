@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Animations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>CSS & JavaScript Animation Demo</h1>
+
+  <!-- Part 1: CSS Animations -->
+  <button class="fancy-btn">Hover Me!</button>
+  <div class="animated-box"></div>
+
+  <!-- Part 2: JS Functions -->
+  <section class="calculator">
+    <h2> Function Demo: Calculator</h2>
+    <p id="calc-result">Click a button to calculate!</p>
+    <button onclick="updateCalcResult(5, 3)">Add 5 + 3</button>
+    <button onclick="updateCalcResult(10, 2)">Multiply 10 × 2</button>
+  </section>
+
+  <!-- Part 3: CSS + JS -->
+  <section>
+    <h2> Dynamic Animation Trigger</h2>
+    <button id="animate-btn">Animate the Box!</button>
+    <div id="trigger-box" class="trigger-box"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
