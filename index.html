@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Animation Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1> CSS + JavaScript Animation Demo</h1>
+
+  <!-- Part 1: CSS animations only -->
+  <button class="btn-animate">Hover Me</button>
+  <div class="box fade-slide"></div>
+
+  <!-- Part 3: Trigger animations with JS -->
+  <button id="animateBoxBtn">Click to Animate Box</button>
+  <div id="jsBox" class="box"></div>
+
+  <button id="toggleModalBtn">Open Modal</button>
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <p>This modal slides in and fades out!</p>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
