@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS & JavaScript Interactivity</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Bringing Web Pages to Life!</h1>
+
+  <section>
+    <h2>Part 1: CSS Transitions & Animations</h2>
+    <p>Hover over the button to see a transition. The box below uses a keyframe animation.</p>
+
+    <button class="css-button">Hover Me!</button>
+    <div class="animated-box"></div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Part 2: JavaScript Functions</h2>
+    <p>Check the browser's console for output demonstrating function logic and scope.</p>
+    <button id="runJsFunctionsBtn">Run JS Functions</button>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Part 3: Combining CSS & JavaScript</h2>
+    <p>Click the button to trigger an animation on the box. Another button to show/hide a popup.</p>
+
+    <div id="interactiveBox" class="interactive-box"></div>
+    <button id="triggerAnimationBtn">Animate Box</button>
+
+    <button id="showPopupBtn">Show Popup</button>
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+        <h3>Welcome!</h3>
+        <p>This is a popup that slides and fades.</p>
+        <button id="closePopupBtn">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
