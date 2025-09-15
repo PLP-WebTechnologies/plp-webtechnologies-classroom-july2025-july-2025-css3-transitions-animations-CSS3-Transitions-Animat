@@ -1,0 +1,74 @@
+
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: #f0f4f8;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #333;
+}
+
+/* --- 🎨 Part 1: CSS Transitions & Keyframes --- */
+
+/* Button with hover transition */
+.btn {
+  padding: 10px 20px;
+  background: steelblue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: dodgerblue;
+  transform: scale(1.1);
+}
+
+/* Animated bouncing box */
+.box {
+  width: 100px;
+  height: 100px;
+  background: crimson;
+  margin: 40px auto;
+  border-radius: 10px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(150px); }
+}
+
+/* --- 🎬 Part 3: Modal popup styles --- */
+.modal {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Shown modal state */
+.modal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hidden modal (removed from flow) */
+.hidden {
+  display: none;
+}
