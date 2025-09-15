@@ -1,0 +1,115 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+  background-color: #d8dde3;
+}
+
+/* Heading */
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #c18215;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Box styling */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 40px auto;
+  background-color: #ff6600;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+/* Animation class to be triggered by JS */
+.animate {
+  animation: fadeSlideIn 1s ease forwards;
+}
+
+/* Keyframes for fade and slide */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Card flip animation */
+.card {
+  width: 150px;
+  height: 100px;
+  margin: 20px auto;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Loader animation */
+.loader {
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  border: 4px solid #ccc;
+  border-top: 4px solid #0077cc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+.loader.active {
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal animation */
+.modal {
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid #0077cc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: fixed;
+  top: -400px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+.modal.visible {
+  top: 100px;
+  opacity: 1;
+}
