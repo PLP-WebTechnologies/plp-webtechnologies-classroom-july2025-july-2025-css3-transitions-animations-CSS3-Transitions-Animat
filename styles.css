@@ -1,0 +1,60 @@
+/* ====== Global Styling ====== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease; /* CSS Transition */
+}
+
+/* ====== Part 1: CSS Transitions & Keyframes ====== */
+.hover-btn {
+  background: #007bff;
+  color: white;
+}
+.hover-btn:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+.animated-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: coral;
+  animation: bounce 3s infinite alternate; /* Continuous keyframe animation */
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50px); }
+}
+
+/* ====== Part 3: CSS Animation triggered by JS ====== */
+.js-box {
+  width: 100px;
+  height: 100px;
+  background: teal;
+  margin: 20px auto;
+  transition: transform 0.5s ease, background 0.5s ease;
+}
+
+/* Class added by JS */
+.animate {
+  transform: rotate(360deg) scale(1.3);
+  background: gold;
+}
