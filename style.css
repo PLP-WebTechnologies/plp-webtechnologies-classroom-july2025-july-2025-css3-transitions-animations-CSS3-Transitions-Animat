@@ -1,0 +1,91 @@
+/* ====== Part 1: CSS3 Transitions & Animations ====== */
+
+/* Button hover with transition */
+.btn-animate {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-animate:hover {
+  background: #45a049;
+  transform: scale(1.1);
+}
+
+/* Box with continuous CSS animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background: #3498db;
+  border-radius: 10px;
+}
+
+.fade-slide {
+  animation: fadeSlide 3s infinite alternate;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0.3;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(100px);
+  }
+}
+
+/* ====== Part 3: Modal triggered with JS ====== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  transform: translateY(-50px);
+  transition: transform 0.5s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
+
+/* JS-triggered box animation */
+.animate {
+  animation: jump 1s ease;
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-80px); }
+  100% { transform: translateY(0); }
+}
