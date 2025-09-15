@@ -1,0 +1,79 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+/* Part 1: Transitions */
+button:hover {
+  background-color: #0077cc;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Animated Box */
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 30px auto;
+  transition: transform 1s ease, background 1s ease;
+}
+
+/* Part 1: Keyframes */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Part 3: Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  transform: translateY(-200px);
+  transition: transform 0.5s ease;
+}
+
+/* Visible state */
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
