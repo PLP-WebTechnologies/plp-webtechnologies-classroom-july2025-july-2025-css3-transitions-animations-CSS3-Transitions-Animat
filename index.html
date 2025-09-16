@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bringing Web Pages to Life</h1>
+    <p>CSS Transitions, Animations & JavaScript Magic!</p>
+  </header>
+
+  <main>
+    <!-- Part 1: CSS Transitions & Animations -->
+    <section id="animations">
+      <h2>CSS Animations & Transitions</h2>
+      <button class="hover-btn">Hover Me!</button>
+      <div class="box"></div>
+    </section>
+
+    <!-- Part 2: JavaScript Functions -->
+    <section id="functions">
+      <h2>JavaScript Functions Demo</h2>
+      <button onclick="startBoxAnimation()">Animate Box</button>
+      <button onclick="toggleModal()">Toggle Modal</button>
+    </section>
+
+    <!-- Part 3: Combining JS & CSS Animations -->
+    <section id="modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Hello There!</h3>
+        <p>This modal slides in and fades out dynamically!</p>
+        <button onclick="toggleModal()">Close</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
