@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animation Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section with Background Animation -->
+    <section class="hero">
+        <div class="animated-background">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to My Interactive Animation Showcase Assignment</h1>
+            <p class="hero-subtitle">CSS3 Transitions & JavaScript Functions</p>
+            <button class="cta-button" onclick="scrollToSection('animations')">
+                Explore Animations
+            </button>
+        </div>
+    </section>
+
+    <!-- Part 1: CSS3 Transitions and Animations -->
+    <section id="animations" class="section">
+        <div class="container">
+            <h2 class="section-title">Part 1: CSS3 Animations & Transitions</h2>
+            
+            <!-- Button Hover Effects -->
+            <div class="demo-group">
+                <h3>Interactive Button Effects</h3>
+                <div class="buttons-container">
+                    <button class="btn btn-pulse">Pulse Effect</button>
+                    <button class="btn btn-slide">Slide Effect</button>
+                    <button class="btn btn-rotate">Rotate Effect</button>
+                    <button class="btn btn-bounce">Bounce Effect</button>
+                </div>
+            </div>
+
+            <!-- Continuous Animations -->
+            <div class="demo-group">
+                <h3>Keyframe Animations</h3>
+                <div class="animations-container">
+                    <div class="animated-shape shape-rotate">
+                        <div class="inner-shape"></div>
+                    </div>
+                    <div class="animated-shape shape-pulse">
+                        <div class="inner-shape"></div>
+                    </div>
+                    <div class="animated-shape shape-float">
+                        <div class="inner-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Cards -->
+            <div class="demo-group">
+                <h3>Hover Triggered Animations</h3>
+                <div class="cards-container">
+                    <div class="card card-flip">
+                        <div class="card-front">
+                            <h4>Hover to Flip</h4>
+                        </div>
+                        <div class="card-back">
+                            <h4>CSS Transform!</h4>
+                        </div>
+                    </div>
+                    <div class="card card-scale">
+                        <h4>Scale Animation</h4>
+                        <p>Hover for effect</p>
+                    </div>
+                    <div class="card card-slide">
+                        <h4>Slide Effect</h4>
+                        <p>Smooth transitions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: JavaScript Functions -->
+    <section id="functions" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Part 2: JavaScript Functions & Scope</h2>
+            
+            <div class="demo-group">
+                <h3>Function Parameters & Return Values</h3>
+                <div class="function-demo">
+                    <div class="input-group">
+                        <input type="number" id="numberInput" placeholder="Enter a number" value="5">
+                        <button onclick="demonstrateFunctions()">Calculate</button>
+                    </div>
+                    <div class="results" id="functionResults"></div>
+                </div>
+            </div>
+
+            <div class="demo-group">
+                <h3>Scope Demonstration</h3>
+                <div class="scope-demo">
+                    <button onclick="demonstrateScope()">Show Scope Examples</button>
+                    <div class="scope-results" id="scopeResults"></div>
+                </div>
+            </div>
+
+            <div class="demo-group">
+                <h3>Reusable Animation Functions</h3>
+                <div class="animation-controls">
+                    <div class="control-target" id="animationTarget">
+                        Target Element
+                    </div>
+                    <div class="controls">
+                        <button onclick="animateElement('fadeIn', 'animationTarget')">Fade In</button>
+                        <button onclick="animateElement('slideLeft', 'animationTarget')">Slide Left</button>
+                        <button onclick="animateElement('bounce', 'animationTarget')">Bounce</button>
+                        <button onclick="resetAnimation('animationTarget')">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 3: Combined CSS + JavaScript -->
+    <section id="combined" class="section">
+        <div class="container">
+            <h2 class="section-title">Part 3: CSS + JavaScript Integration</h2>
+            
+            <!-- Dynamic Modal System -->
+            <div class="demo-group">
+                <h3>Interactive Modal System</h3>
+                <button class="trigger-btn" onclick="openModal('demoModal')">
+                    Open Animated Modal
+                </button>
+            </div>
+
+            <!-- Progress Animation -->
+            <div class="demo-group">
+                <h3>Dynamic Progress Animations</h3>
+                <div class="progress-demo">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <span class="progress-text" id="progressText">0%</span>
+                    </div>
+                    <div class="progress-controls">
+                        <button onclick="startProgress()">Start Progress</button>
+                        <button onclick="resetProgress()">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Gallery with JavaScript Controls -->
+            <div class="demo-group">
+                <h3>Interactive Card Gallery</h3>
+                <div class="gallery-controls">
+                    <button onclick="shuffleCards()">Shuffle Cards</button>
+                    <button onclick="flipAllCards()">Flip All</button>
+                    <button onclick="resetCards()">Reset</button>
+                </div>
+                <div class="card-gallery" id="cardGallery">
+                    <div class="gallery-card" data-index="0">
+                        <div class="card-content">Card 1</div>
+                    </div>
+                    <div class="gallery-card" data-index="1">
+                        <div class="card-content">Card 2</div>
+                    </div>
+                    <div class="gallery-card" data-index="2">
+                        <div class="card-content">Card 3</div>
+                    </div>
+                    <div class="gallery-card" data-index="3">
+                        <div class="card-content">Card 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Animation System -->
+            <div class="demo-group">
+                <h3>Dynamic Loading Animations</h3>
+                <div class="loading-demo">
+                    <div class="loading-container" id="loadingContainer">
+                        <div class="loading-spinner"></div>
+                        <p>Loading...</p>
+                    </div>
+                    <button onclick="toggleLoading()">Toggle Loading</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="demoModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Animated Modal</h3>
+                <button class="close-btn" onclick="closeModal('demoModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This modal demonstrates the combination of CSS animations and JavaScript event handling!</p>
+                <div class="modal-animation-demo">
+                    <div class="demo-element" id="modalDemo">
+                        Animated Element
+                    </div>
+                    <button onclick="animateModalDemo()">Animate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
