@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive CSS & JavaScript Assignment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>✨ Bringing Web Pages to Life ✨</h1>
+
+  <!-- Part 1: CSS Animations -->
+  <section>
+    <h2>Part 1: CSS3 Animations</h2>
+    <button class="btn">Hover Me!</button>
+    <div class="box"></div>
+  </section>
+
+  <!-- Part 2: JavaScript Functions -->
+  <section>
+    <h2>Part 2: JavaScript Functions</h2>
+    <button onclick="showGreeting('Student')">Click for Greeting</button>
+    <p id="greeting"></p>
+  </section>
+
+  <!-- Part 3: Combining CSS + JS -->
+  <section>
+    <h2>Part 3: Combining CSS & JS</h2>
+    <button onclick="animateBox()">Animate Box</button>
+    <button onclick="toggleModal()">Toggle Modal</button>
+
+    <div id="animate-me" class="animate-box"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p>This is a modal with slide/fade animation!</p>
+        <button onclick="toggleModal()">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
