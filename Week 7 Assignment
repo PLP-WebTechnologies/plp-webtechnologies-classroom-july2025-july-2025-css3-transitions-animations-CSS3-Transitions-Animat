@@ -1,0 +1,127 @@
+###Part 1: CSS Transitions & Animations
+/* styles.css */
+
+/* Button hover with smooth background change */
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2ecc71;
+}
+
+/* Continuous spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  animation: spin 4s linear infinite;
+  margin: 20px auto;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn, spin;
+  animation-duration: 1s, 4s;
+  animation-timing-function: ease, linear;
+  animation-iteration-count: 1, infinite;
+}
+
+/* Fade in keyframes */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+
+###Part 2: JavaScript Functions — Scope, Parameters & Return Values
+// script.js
+
+// Global scope variable
+const defaultDuration = 2000;
+
+// Function to calculate animation delay based on index and base delay
+function calculateDelay(index, baseDelay = 300) {
+  const delay = index * baseDelay;
+  return delay; // return value used later
+}
+
+// Function to apply animation delay style to elements
+function setAnimationDelay(element, delay) {
+  element.style.animationDelay = delay + 'ms';
+}
+
+// Demonstrating local scope inside a function
+function animateBoxes(boxes) {
+  for(let i = 0; i < boxes.length; i++) {
+    let delay = calculateDelay(i);
+    setAnimationDelay(boxes[i], delay);
+    boxes[i].classList.add('fade-in-box');
+  }
+}
+
+
+###Part 3: Combining CSS Animations with JavaScript
+/* styles.css continued */
+
+/* Slide in from left + fade */
+@keyframes slideInFade {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideInFade 1s ease forwards;
+}
+
+/* Fade out */
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+
+// script.js continued
+
+// Function to trigger slide-in animation on an element
+function triggerSlideIn(element) {
+  element.classList.remove('fade-out');
+  element.classList.add('slide-in');
+}
+
+// Function to trigger fade-out animation on an element
+function triggerFadeOut(element) {
+  element.classList.remove('slide-in');
+  element.classList.add('fade-out');
+}
+
+// Example: Button click triggers slide in and fade out after delay
+const animateBtn = document.querySelector('#animate-btn');
+const animatedBox = document.querySelector('.animated-box');
+
+animateBtn.addEventListener('click', () => {
+  triggerSlideIn(animatedBox);
+
+  // Fade out after 3 seconds
+  setTimeout(() => {
+    triggerFadeOut(animatedBox);
+  }, 3000);
+});
