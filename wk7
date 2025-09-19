@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS & JavaScript Animations Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f4f4f9;
+    }
+
+    /* Button hover transition */
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background: #2980b9;
+      transform: scale(1.05);
+    }
+
+    /* Box styling */
+    .box {
+      width: 120px;
+      height: 120px;
+      margin-top: 30px;
+      background: coral;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+
+    /* Fade + slide in */
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Keyframe pulse effect */
+    @keyframes pulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .pulse {
+      animation: pulse 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <button id="animateBtn">Animate Box</button>
+  <div id="box" class="box"></div>
+
+  <script>
+    // Global scope
+    const box = document.getElementById("box");
+
+    // Reusable function: toggle a class and return the state
+    function toggleClass(element, className) {
+      element.classList.toggle(className);
+      return element.classList.contains(className); // true/false
+    }
+
+    // Function showing local vs global scope
+    function greetUser(name) {
+      let localGreeting = "Hello"; // local variable
+      console.log(localGreeting + ", " + name + "!"); // uses parameter
+      return localGreeting + ", " + name + "!"; // return value
+    }
+
+    // Functions to control animation
+    function startPulse() {
+      box.classList.add("pulse");
+    }
+
+    function stopPulse() {
+      box.classList.remove("pulse");
+    }
+
+    // Event listener: triggers DOM + animations
+    document.getElementById("animateBtn").addEventListener("click", () => {
+      let visible = toggleClass(box, "show"); // toggle fade-in/out
+
+      if (visible) {
+        startPulse(); // start pulsing
+        greetUser("Student"); // demo of function call
+      } else {
+        stopPulse();
+      }
+    });
+  </script>
+</body>
+</html>
