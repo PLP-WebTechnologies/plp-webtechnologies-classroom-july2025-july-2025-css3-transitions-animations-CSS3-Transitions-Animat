@@ -1,0 +1,112 @@
+#index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="animate-btn">Animate Box</button>
+    <div id="box" class="box"></div>
+    <div id="card" class="card">
+        <div class="front">Front</div>
+        <div class="back">Back</div>
+    </div>
+    <div id="loading" class="loading">Loading...</div>
+    <button id="start-loading">Start Loading</button>
+    <button id="stop-loading">Stop Loading</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+style.css
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: transform 0.5s;
+}
+
+.box.animate {
+    transform: scale(1.5) rotate(360deg);
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.loading {
+    font-size: 24px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading.show {
+    display: block;
+}
+
+
+#script.js
+// Function to animate the box
+function animateBox() {
+    const box = document.getElementById('box');
+    box.classList.toggle('animate');
+}
+
+// Function to flip the card
+function flipCard() {
+    const card = document.getElementById('card');
+    card.classList.toggle('flip');
+}
+
+// Function to start/stop loading animation
+function toggleLoading() {
+    const loading = document.getElementById('loading');
+    loading.classList.toggle('show');
+}
+
+// Add event listeners
+document.getElementById('animate-btn').addEventListener('click', animateBox);
+document.getElementById('card').addEventListener('click', flipCard);
+document.getElementById('start-loading').addEventListener('click', () => {
+    const loading = document.getElementById('loading');
+    loading.classList.add('show');
+});
+document.getElementById('stop-loading').addEventListener('click', () => {
+    const loading = document.getElementById('loading');
+    loading.classList.remove('show');
+});
+
+
+
