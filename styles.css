@@ -1,0 +1,70 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: #f0f0f0;
+}
+
+/* -------------------------------
+   Part 1: CSS Transitions/Animations
+-------------------------------- */
+
+/* Button hover transition */
+.fancy-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fancy-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Box to animate */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 2rem auto;
+  background: #4facfe;
+  border-radius: 12px;
+}
+
+/* Keyframe animation */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+/* Class to trigger animation */
+.bounce {
+  animation: bounce 1s ease;
+}
+
+/* -------------------------------
+   Popup Modal
+-------------------------------- */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+.popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
