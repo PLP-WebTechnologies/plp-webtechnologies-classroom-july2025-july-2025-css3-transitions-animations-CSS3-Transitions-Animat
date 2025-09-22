@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.btn2 {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.btn2:active {
+  transform: scale(0.95);
+}
+
+.btn2:hover {
+  background: #2ecc71;
+  transform: scale(1.1);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 2rem auto;
+  background: #e74c3c;
+  border-radius: 8px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.box.spin {
+  animation: fadeIn 1s ease forwards;
+  background: #2ecc71;
+}
