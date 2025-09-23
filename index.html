@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Recipe App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 class="title">🍰 Simple Vanilla Cake Recipe</h1>
+  </header>
+
+  <main>
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+      <ul>
+        <li>2 cups all-purpose flour</li>
+        <li>1 ½ cups sugar</li>
+        <li>1 cup butter (softened)</li>
+        <li>4 eggs</li>
+        <li>2 tsp vanilla extract</li>
+        <li>1 cup milk</li>
+        <li>2 tsp baking powder</li>
+        <li>Pinch of salt</li>
+      </ul>
+    </section>
+
+    <section class="steps">
+      <h2>Steps</h2>
+      <ol>
+        <li>Cream butter and sugar until fluffy.</li>
+        <li>Beat in eggs one at a time, then add vanilla.</li>
+        <li>Mix flour, baking powder, and salt in a bowl.</li>
+        <li>Gradually add dry ingredients and milk alternately.</li>
+        <li>Pour into greased cake pan and bake at 180°C (350°F) for 30–35 mins.</li>
+      </ol>
+    </section>
+
+    <section class="actions">
+      <button id="animateBtn">🎉 Animate Cake</button>
+      <button id="calculateBtn">🍴 Servings Calculator</button>
+      <button id="showRecipeBtn">📖 Show Recipe Modal</button>
+      <p id="result"></p>
+    </section>
+
+    <div class="cake-box" id="cakeBox">🎂</div>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>📖 Full Recipe Steps</h2>
+      <p>Follow these instructions carefully:</p>
+      <ol>
+        <li>Preheat oven to 180°C (350°F).</li>
+        <li>Cream butter and sugar until light and fluffy.</li>
+        <li>Add eggs one at a time, mixing well.</li>
+        <li>Stir in vanilla extract.</li>
+        <li>Mix dry ingredients (flour, baking powder, salt) in a bowl.</li>
+        <li>Add dry mix and milk alternately into the butter mixture.</li>
+        <li>Pour into greased pan and bake for 30–35 minutes.</li>
+        <li>Cool before serving. Enjoy! 🎂</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
