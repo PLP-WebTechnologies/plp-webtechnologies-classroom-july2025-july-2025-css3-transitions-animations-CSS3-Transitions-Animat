@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS3 & JS Animation Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Interactive Animation Showcase</h1>
+
+  <!-- Part 1: CSS Transitions & Animations -->
+  <button class="hover-button">Hover Me</button>
+  <div class="animated-box"></div>
+
+  <!-- Part 3: JS + CSS Integration -->
+  <button onclick="triggerBoxAnimation()">Animate Box</button>
+  <button onclick="toggleModal()">Toggle Modal</button>
+
+  <div id="modal" class="modal hidden">
+    <p>This is a modal popup!</p>
+    <button onclick="toggleModal()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

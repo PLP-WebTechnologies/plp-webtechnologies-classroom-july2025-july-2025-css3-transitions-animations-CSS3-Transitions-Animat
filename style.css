@@ -1,0 +1,49 @@
+/* Part 1: CSS Transitions & Keyframes */
+
+/* Button hover effect */
+.hover-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  .hover-button:hover {
+    background-color: #2ecc71;
+  }
+  
+  /* Animated box */
+  .animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+  }
+  
+  /* Keyframe animation */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid #333;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .modal.visible {
+    opacity: 1;
+    transform: translate(-50%, -40%);
+  }
+  .hidden {
+    display: none;
+  }
