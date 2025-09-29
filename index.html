@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS & JavaScript Animations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎬 CSS & JavaScript Animations Demo</h1>
+
+  <!-- Part 1: CSS Animations Only -->
+  <section>
+    <h2>Part 1: CSS Transitions & Animations</h2>
+    <button class="hover-btn">Hover Me</button>
+    <div class="box"></div>
+    <div class="circle"></div>
+  </section>
+
+  <!-- Part 2: JavaScript Functions -->
+  <section>
+    <h2>Part 2: JavaScript Functions</h2>
+    <p id="function-output">Click the button to see a calculation.</p>
+    <button onclick="showCalculation()">Run Function</button>
+  </section>
+
+  <!-- Part 3: Combining CSS & JavaScript -->
+  <section>
+    <h2>Part 3: Combining CSS & JS</h2>
+    <button id="animate-btn">Animate the Box</button>
+    <div id="animate-box"></div>
+
+    <button id="open-modal">Open Modal</button>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p>This is a modal popup 🎉</p>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

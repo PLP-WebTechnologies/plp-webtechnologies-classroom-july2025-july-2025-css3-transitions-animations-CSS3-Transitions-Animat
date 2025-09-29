@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+section {
+  margin: 40px 0;
+}
+
+/* --- Part 1: CSS Animations --- */
+
+/* Button hover effect with transition */
+.hover-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: lightblue;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.hover-btn:hover {
+  background: dodgerblue;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Box with fade + slide animation */
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 20px auto;
+  animation: fadeSlide 3s infinite alternate;
+}
+@keyframes fadeSlide {
+  from {
+    opacity: 0.3;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(100px);
+  }
+}
+
+/* Continuous animation (circle) */
+.circle {
+  width: 60px;
+  height: 60px;
+  background: mediumseagreen;
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Part 3: CSS + JS Integration --- */
+
+/* Hidden box for animation */
+#animate-box {
+  width: 100px;
+  height: 100px;
+  background: purple;
+  margin: 20px auto;
+  position: relative;
+}
+.move {
+  animation: moveRight 3s infinite alternate;
+  animation-play-state: running;
+}
+@keyframes moveRight {
+  from { left: 0; }
+  to { left: 200px; }
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: rgb(216, 213, 213);
+  padding: 20px;
+  margin: 100px auto;
+  width: 300px;
+  border-radius: 8px;
+  animation: slideIn 0.9s;
+}
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
