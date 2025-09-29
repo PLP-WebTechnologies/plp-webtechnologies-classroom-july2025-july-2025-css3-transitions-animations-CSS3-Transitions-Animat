@@ -1,48 +1,42 @@
-/* ===== Part 1: CSS Transitions ===== */
-.animate-btn {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.5s ease, transform 0.3s ease;
+// =======================
+// Part 2: JS Functions
+// =======================
+
+// Function to generate random number
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-.animate-btn:hover {
-    background-color: #2ecc71;
-    transform: scale(1.1);
-}
+// Button to trigger function
+const calcBtn = document.getElementById("calcBtn");
+const calcResult = document.getElementById("calcResult");
 
-/* Box with transition */
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: #e74c3c;
-    margin-top: 20px;
-    transition: transform 0.5s ease, background-color 0.5s ease;
-}
+calcBtn.addEventListener("click", () => {
+    // Using the function and showing return value
+    const number = getRandomNumber(1, 100);
+    calcResult.textContent = `Random Number: ${number}`;
+});
 
-.box:hover {
-    transform: rotate(20deg) scale(1.2);
-    background-color: #8e44ad;
-}
+// =======================
+// Part 3: Trigger CSS Animations with JS
+// =======================
+const animateBtn = document.getElementById("animateBoxBtn");
+const animatedBox = document.querySelector(".animated-box");
 
-/* ===== Part 3: Keyframe Animations ===== */
-.animated-box {
-    width: 100px;
-    height: 100px;
-    background-color: #f1c40f;
-    margin-top: 20px;
-    position: relative;
-}
+animateBtn.addEventListener("click", () => {
+    // Remove class if it already exists to allow re-triggering
+    animatedBox.classList.remove("slide-fade");
 
-/* Define a slide + fade animation */
-@keyframes slideFade {
-    0% { transform: translateX(0); opacity: 1; }
-    50% { transform: translateX(150px); opacity: 0.5; }
-    100% { transform: translateX(0); opacity: 1; }
-}
+    // Trigger reflow to restart animation
+    void animatedBox.offsetWidth;
 
-.slide-fade {
-    animation: slideFade 2s ease-in-out forwards;
+    // Add class to start animation
+    animatedBox.classList.add("slide-fade");
+});
+
+// Example of a reusable function to animate any element
+function triggerAnimation(element, animationClass) {
+    element.classList.remove(animationClass);
+    void element.offsetWidth;
+    element.classList.add(animationClass);
 }
