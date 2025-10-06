@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afribio Energies - Clean Gas from School Waste</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Overlay (Mobile) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M3 12h18M3 6h18M3 18h18"></path>
+        </svg>
+    </button>
+
+    <!-- Left Navigation -->
+    <nav class="nav-container" id="navContainer">
+        <div class="nav-brand">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <div class="nav-logo">
+                <span><img src="logo.png" alt="Afribio Energies Logo"></span>
+                <span>AfriBio</span>
+            </div>
+        </div>
+
+        <ul class="nav-menu" role="menubar">
+            <li class="nav-item" role="none">
+                <a href="index.html" class="nav-link" role="menuitem" data-tooltip="Home">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item" role="none">
+                <a href="Howitworks.html" class="nav-link" role="menuitem" data-tooltip="How It Works">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>How It Works</span>
+                </a>
+            </li>
+            <li class="nav-item" role="none">
+                <a href="about.html" class="nav-link" role="menuitem" data-tooltip="About Us">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>About Us</span>
+                </a>
+            </li>
+            <li class="nav-item" role="none">
+                <a href="careers.html" class="nav-link" role="menuitem" data-tooltip="Careers / Vision Path">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span>Careers / Vision Path</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-footer">
+            <button class="nav-contact" aria-label="Contact">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Contact</span>
+            </button>
+            <button class="nav-collapse" id="navCollapse" aria-label="Collapse navigation">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>AfriBio Energies</h1>
+                        <p class="hero-subhead">Powering The future!</p>
+                        <h2>Clean gas from school waste</h2>
+                        <p class="hero-subhead">Afribio Energies installs prefabricated biogas digesters designed for boarding schools around Africa </p>
+                        <div class="cta-buttons">
+                            <a href="Howitworks.html" class="btn btn-primary">Learn How It Works</a>
+                            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-logo">
+                            <img src="logo.png" alt="Afribio Energies Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem" id="problem">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Eliminating the Triple Threat Crippling Kenyan Boarding Schools</h1>
+                    <p class="section-lead">Reliance on firewood and inefficient waste management drains budgets, harms health, and destabilises operations.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-value">Ksh 70,000–100,000 / month</div>
+                        <div class="stat-label">Firewood expense</div>
+                        <div class="stat-support">Ksh 630,000–900,000 / year</div>
+                    </div>
+
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                                <path d="M8 13h.01"></path>
+                                <path d="M12 13h.01"></path>
+                                <path d="M16 13h.01"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-value">Ksh 100,000+ / year</div>
+                        <div class="stat-label">Waste management</div>
+                        <div class="stat-support">Sanitary waste disposal fees </div>
+                    </div>
+
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="stat-value">Over Ksh 1,000,000 / year</div>
+                        <div class="stat-label">Combined drain</div>
+                        <div class="stat-support">Conservative annual total</div>
+                    </div>
+                </div>
+
+                <div class="problem-bullets">
+                    <div class="bullet-item reveal">
+                        <div class="bullet-icon">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <p>Eaten Finances-Schools spend cumulatively huge amounts of money on firewood every year , plus hidden costs quietly draining the budget</p>
+                    </div>
+                    <div class="bullet-item reveal">
+                        <div class="bullet-icon">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <p>Unreliable sanitation & energy systems – Human waste disposal remains a major challenge, and schools are wary of technical solutions </p>
+                    </div>
+                    <div class="bullet-item reveal">
+                        <div class="bullet-icon">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <p>Heavy labour & operational strain . Daily firewood work (early morning fetching, chopping, handling sometimes in harsh weather) and the risks of cuts and burns create constant stress and disrupt staff routines and health.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution" id="solution">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Turn Waste Into Reliable, Clean Cooking Gas</h2>
+                    <p class="section-lead">Prefabricated biogas digesters convert the sanitary waste on-site into high‑pressure, clean gas piped to your kitchen.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card reveal">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Feed</h3>
+                        <p>We use the sanitary waste you already produce. Kitchen scraps and manure is optional.</p>
+                    </div>
+
+                    <div class="step-card reveal">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Digest</h3>
+                        <p>Sealed tank automatically converts (digests) the waste to pure gas safely on-site. The gas is then stored for use.</p>
+                    </div>
+
+                    <div class="step-card reveal">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Use</h3>
+                        <p>Purified gas piped to stoves — immediate LPG-like performance. <br> 24/7 heavy perfomance .</p>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h4>Eliminate firewood and waste management expenditures for good</h4>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                        </div>
+                        <h4>More staff time for other important activities </h4>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                                <rect x="1" y="5" width="22" height="14" rx="7" ry="7"></rect>
+                                <circle cx="8" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h4>Guaranteed on‑site supply to prevent disruption of the school's programmes</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why It Matters Section -->
+        <section class="why" id="why">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Our Biogas System Is the Right Choice</h2>
+                    <p class="section-lead">Engineered for boarding schools: human-waste first, fast install, powerful flame, and a complete partnership.</p>
+                </div>
+
+                <div class="differentiators-grid">
+                    <div class="diff-card reveal">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="diff-title">Built for your primary waste</h3>
+                        <p>Efficient on human sanitary waste: kitchen waste and manure is optional.</p>
+                    </div>
+
+                    <div class="diff-card reveal">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="diff-title">Plug‑and‑play</h3>
+                        <p>Prefabricated unit: minimal construction needed for installation <br> Design: Tailored and designed specifically for a school's needs</p>
+                    </div>
+
+                    <div class="diff-card reveal">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="diff-title">Powerful and reliable</h3>
+                        <p>Powerful flame and clean-burning gas . Matches LPG's perfomance.</p>
+                    </div>
+
+                    <div class="diff-card reveal">
+                        <div class="diff-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="diff-title">Complete partnership</h3>
+                        <p>Installation, staff training, maintenance and support well structured .</p>
+                    </div>
+                </div>
+
+                <div class="counters">
+                    <div class="counter-item reveal">
+                        <div class="counter-value" data-target="1200">0</div>
+                        <div class="counter-label">Schools targeted by 2055 </div>
+                    </div>
+                    <div class="counter-item reveal">
+                        <div class="counter-value" data-target="1800000">0</div>
+                        <div class="counter-label">Students empowered</div>
+                    </div>
+                    <div class="counter-item reveal">
+                        <div class="counter-value" data-target="2000">0</div>
+                        <div class="counter-label">Tons of organic waste cumulatively diverted yearly </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us for a free site assessment</h2>
+                </div>
+
+                <div class="packages">
+                    <div class="package-item">
+                        <div class="package-size">Small sized school</div>
+                        <div class="package-desc">up to 300 students · installation takes 2–3 days</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">Medium sized school</div>
+                        <div class="package-desc">300–900 students · install 3–5 days</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">Large sized school</div>
+                        <div class="package-desc">900+ students · install 4–7 days</div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="schoolName" class="form-label">School name</label>
+                        <input type="text" id="schoolName" name="schoolName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactName" class="form-label">Contact name</label>
+                        <input type="text" id="contactName" name="contactName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location" class="form-label">Location (county)</label>
+                        <input type="text" id="location" name="location" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber" class="form-label">School's contact number</label>
+                        <input type="tel" id="contactNumber" name="contactNumber" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentPopulation" class="form-label">Student population</label>
+                        <input type="number" id="studentPopulation" name="studentPopulation" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-input form-textarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send enquiry</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>Afribio Energies</h3>
+                        <p class="footer-tagline">Prefabricated biogas solutions for Kenyan boarding schools</p>
+                        <P>
+                        <p class="footer-tagline">phone +254759795294</p>
+                        <P>
+                          <br>
+                          <i> In patnership with Jacob's ladder Africa </i>
+                        </P>
+                    </div>
+                    <div class="footer-links">
+                        <a href="Howitworksi.html">How It Works</a>
+                        <a href="about.html">About Us</a>
+                        <a href="careers.html">Careers / Vision Path</a>
+                    </div>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="social-media">
+                    <div class="social-label">Connect with us</div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/afribio-energies/" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/job_l_er?t=tIURnuhjNv3Cgsm7vOuisg&s=08" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1BaXHQm7Tu/" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/afribio.energies?igsh=MWFjNnhhb20zMXl5eg==" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.25 14.816 3.76 13.665 3.76 12.368s.49-2.448 1.366-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.875.875 1.366 2.026 1.366 3.323s-.491 2.448-1.366 3.323c-.875.807-2.026 1.297-3.323 1.297zm8.062-10.966h-2.107c-.389 0-.7-.311-.7-.7V3.215c0-.389.311-.7.7-.7h2.107c.389 0 .7.311.7.7v2.107c0 .389-.311.7-.7.7zm2.107 10.966c-1.297 0-2.448-.49-3.323-1.297-.875-.875-1.366-2.026-1.366-3.323s.49-2.448 1.366-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.875.875 1.366 2.026 1.366 3.323s-.49 2.448-1.366 3.323c-.875.807-2.026 1.297-3.323 1.297z"/>
+                            </svg>
+                        </a>
+                        <a href="biogreen.p@outlook.com" aria-label="Email">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Afribio Energies. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+    // Add this JavaScript to your page
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        console.log('✅ Form submission started'); // Debug line
+        
+        // Get form data - FIXED: Removed duplicate contactName
+        const formData = {
+            schoolName: document.getElementById('schoolName').value,
+            contactName: document.getElementById('contactName').value,
+            email: document.getElementById('email').value,
+            location: document.getElementById('location').value,
+            contactNumber: document.getElementById('contactNumber').value,
+            studentPopulation: parseInt(document.getElementById('studentPopulation').value),
+            message: document.getElementById('message').value
+        };
+
+        console.log('📝 Form data:', formData); // Debug line
+
+        const submitButton = document.querySelector('.form-submit');
+        const originalText = submitButton.textContent;
+        
+        try {
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            console.log('🔄 Sending to backend...'); // Debug line
+
+            // Send to backend
+            const response = await fetch('http://localhost:3001/submit-enquiry', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            console.log('✅ Response status:', response.status); // Debug line
+
+            const result = await response.json();
+            console.log('📨 Result:', result); // Debug line
+
+            if (result.success) {
+                alert('Enquiry submitted successfully!');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Error: ' + result.message);
+            }
+        } catch (error) {
+            console.error('❌ Network error details:', error);
+            alert('Network error. Please try again.');
+        } finally {
+            // Reset button
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
+    });
+</script>
+</body>
+</html>
