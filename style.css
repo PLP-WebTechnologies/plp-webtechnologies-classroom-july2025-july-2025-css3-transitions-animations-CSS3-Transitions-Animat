@@ -1,0 +1,417 @@
+/* --- CSS Variables (Theme) --- */
+:root {
+    --color-bg: #111827;
+    --color-bg-card: #1f2937;
+    --color-border: #374151;
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #9ca3af;
+    --color-text-header: #e0e7ff;
+    
+    --color-primary: #4f46e5;
+    --color-primary-hover: #4338ca;
+    --color-secondary: #4b5563;
+    --color-secondary-hover: #374151;
+    --color-danger: #be123c;
+    --color-danger-hover: #9f1239;
+    
+    --color-teal: #14b8a6;
+    --color-rose: #f43f5e;
+    --color-sky: #0ea5e9;
+    --color-indigo: #6366f1;
+
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 15px 5px rgba(var(--color-teal-rgb), 0.4);
+}
+
+/* --- Base & Layout Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-header);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* --- Helper Classes --- */
+.demo-card {
+    background-color: var(--color-bg-card);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-span-3 {
+    grid-column: 1 / -1; /* Span full width */
+}
+
+.text-center { text-align: center; }
+.w-full { width: 100%; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.demo-divider { border-top: 1px solid var(--color-border); }
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* --- Form & Button Styles --- */
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--shadow-md);
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+}
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+}
+.btn-secondary:hover {
+    background-color: var(--color-secondary-hover);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-danger {
+    background-color: var(--color-danger);
+}
+.btn-danger:hover {
+    background-color: var(--color-danger-hover);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"], input[type="number"] {
+    font-family: 'Inter', sans-serif;
+    flex-grow: 1;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+}
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.output-box {
+    background-color: var(--color-bg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    min-height: 50px;
+    border: 1px dashed var(--color-border);
+}
+
+.output-box > * {
+    background-color: var(--color-teal);
+    color: var(--color-bg);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* |--------------------------------------------------------------------------
+| Part 1: CSS Transitions and Animations
+|--------------------------------------------------------------------------
+*/
+
+/* 1a. Button hover transition */
+.btn-hover-effect {
+    background-color: var(--color-indigo);
+    /* Define the properties to transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-hover-effect:hover {
+    background-color: #4f46e5; /* Darker indigo */
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* 1b. Keyframe animation (Body Gradient) */
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-bg-animate {
+    background: linear-gradient(-45deg, #111827, #1e1b4b, #111827, #311847);
+    background-size: 400% 400%;
+    animation: gradient-flow 15s ease infinite;
+}
+
+/* 1c. Keyframe animation (Breathing Box) */
+@keyframes breathing-glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px 0px rgba(20, 184, 166, 0.4);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px 10px rgba(20, 184, 166, 0.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px 0px rgba(20, 184, 166, 0.4);
+        opacity: 0.8;
+    }
+}
+
+.breathing-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-teal);
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    animation: breathing-glow 3s infinite ease-in-out;
+}
+
+
+/* |--------------------------------------------------------------------------
+| Part 3: Combining CSS & JS (Animation Definitions)
+|--------------------------------------------------------------------------
+*/
+
+/* 3a. Dynamic animation trigger */
+.js-trigger-box {
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-rose);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* This is the class JS will add to trigger the animation */
+.shake-animation {
+    animation: shake 0.5s 1 ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-10px); }
+    30% { transform: translateX(10px); }
+    50% { transform: translateX(-10px); }
+    70% { transform: translateX(10px); }
+    90% { transform: translateX(-10px); }
+}
+
+/* 3b. Card Flip */
+.flip-card-container {
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    perspective: 1000px; /* Gives the 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* This class is added by JS to trigger the flip */
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-backface-visibility: hidden; /* For Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: var(--color-sky);
+}
+
+.flip-card-back {
+    background-color: #0c4a6e; /* Darker sky */
+    transform: rotateY(180deg);
+}
+        
+/* 3c. Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 50;
+}
+
+.modal-content {
+    background-color: var(--color-bg-card);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--color-border);
+    /* Start scaled down */
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+/* This class is added by JS to show the modal */
+.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.is-visible .modal-content {
+    transform: scale(1);
+}
+
+/* 3d. Loading Bar */
+.loading-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loading-bar-inner {
+    width: 0%; /* JS will change this */
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    /* The transition is key! */
+    transition: width 0.5s ease-in-out;
+}
+
+/* 3e. Staggered Animations */
+.stagger-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.stagger-item {
+    background-color: var(--color-bg);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    
+    /* Start hidden */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease-out;
+}
+
+/* This class is added by JS to show the items */
+.stagger-item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
