@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced CSS & JavaScript Showcase</title>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to the external JavaScript file. 
+         'defer' ensures it runs after the HTML is parsed. -->
+    <script src="script.js" defer></script>
+  </head>
+  <body class="gradient-bg-animate">
+    <div class="container">
+      <header>
+        <h1>Advanced CSS & JavaScript Showcase</h1>
+        <p>Exploring Animations, Functions, and Interaction</p>
+      </header>
+
+      <!-- 
+          Part 1: CSS3 Transitions and Animations 
+        -->
+      <section id="part1">
+        <h2>Part 1: CSS Transitions & Animations</h2>
+        <div class="demo-card grid-2">
+          <!-- 1a. Transition -->
+          <div class="text-center">
+            <h3>CSS Transition</h3>
+            <p>
+              Hover this button to see a smooth transition on `transform` and
+              `box-shadow`.
+            </p>
+            <button class="btn btn-hover-effect">Hover Me!</button>
+          </div>
+          <!-- 1b. Keyframe Animation -->
+          <div class="text-center">
+            <h3>CSS @keyframe Animation</h3>
+            <p>
+              This box uses `animation` and `@keyframes` to create a "breathing"
+              glow effect.
+            </p>
+            <div class="breathing-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+          Part 2: JavaScript Functions (Scope, Parameters, Return)
+        -->
+      <section id="part2">
+        <h2>Part 2: JavaScript Functions</h2>
+        <div class="demo-card space-y-6">
+          <!-- 2a. Scope -->
+          <div>
+            <h3>Local vs. Global Scope</h3>
+            <p>
+              Demonstrate how functions access variables from different scopes.
+            </p>
+            <div class="form-group">
+              <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter a name for global scope"
+              />
+              <button id="setGlobalBtn" class="btn btn-primary">
+                Set Global Name
+              </button>
+            </div>
+            <button id="localScopeBtn" class="btn btn-secondary">
+              Demo Local Scope
+            </button>
+            <p id="scopeDisplay">Global name is not set.</p>
+          </div>
+
+          <!-- 2b. Advanced Scope: Closure -->
+          <div class="demo-divider"></div>
+          <div>
+            <h3>Advanced Scope: Closure</h3>
+            <p>
+              This button uses a function factory (closure) to maintain its own
+              private count.
+            </p>
+            <button id="counterBtn" class="btn btn-primary">
+              Clicked 0 times
+            </button>
+          </div>
+
+          <!-- 2c. Parameters & Return Values -->
+          <div class="demo-divider"></div>
+          <div>
+            <h3>Parameters & Return Values</h3>
+            <p>
+              This function takes parameters (`tag`, `text`, `class`) and
+              <strong>returns</strong> a new HTML element.
+            </p>
+            <button id="createElementBtn" class="btn btn-primary">
+              Create & Append Element
+            </button>
+            <div id="elementFactoryOutput" class="output-box">
+              <!-- New elements will be added here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+          Part 3: Combining CSS Animations with JavaScript
+        -->
+      <section id="part3">
+        <h2>Part 3: Combining CSS & JS</h2>
+        <div class="demo-card grid-3">
+          <!-- 3a. Trigger Animation -->
+          <div>
+            <h3>Trigger Animation</h3>
+            <p>
+              Click to trigger a reusable CSS keyframe animation via JavaScript.
+            </p>
+            <button id="triggerAnimationBtn" class="btn btn-danger w-full">
+              Shake the Box!
+            </button>
+            <div id="jsTriggerBox" class="js-trigger-box"></div>
+          </div>
+
+          <!-- 3b. Card Flip -->
+          <div>
+            <h3>Toggle Class (Card Flip)</h3>
+            <p>
+              Click this card. JavaScript will toggle a class (`.is-flipped`)
+              that triggers a CSS 3D transform.
+            </p>
+            <div class="flip-card-container" id="flipCard">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h4>Click Me to Flip!</h4>
+                </div>
+                <div class="flip-card-back">
+                  <h4>Ta-da! Flipped!</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3c. Modal -->
+          <div>
+            <h3>Show/Hide Modal</h3>
+            <p>
+              JS adds a class to the modal to fade it in. The transition is 100%
+              CSS.
+            </p>
+            <button id="openModalBtn" class="btn btn-danger w-full">
+              Open Modal
+            </button>
+          </div>
+
+          <!-- 3d. Loading Bar -->
+          <div class="grid-span-3">
+            <h3>Dynamic Style Modification</h3>
+            <p>
+              Click to simulate a process. JS will dynamically change the
+              `width` property, triggering a CSS transition.
+            </p>
+            <div class="loading-bar-container">
+              <div id="loadingBar" class="loading-bar-inner"></div>
+            </div>
+            <div class="btn-group">
+              <button id="startLoadBtn" class="btn btn-primary">
+                Start Load
+              </button>
+              <button id="resetLoadBtn" class="btn btn-secondary">Reset</button>
+            </div>
+          </div>
+
+          <!-- 3e. Staggered Animation -->
+          <div class="grid-span-3">
+            <h3>Staggered Animations</h3>
+            <p>
+              Click to trigger a "staggered" animation, where JS animates items
+              in sequence using a loop and `setTimeout`.
+            </p>
+            <button id="staggerBtn" class="btn btn-primary">
+              Animate List
+            </button>
+            <ul class="stagger-list" id="staggerList">
+              <li class="stagger-item">Medicine is life</li>
+              <li class="stagger-item">Mechanical is innovation</li>
+              <li class="stagger-item">Software dev is evolving</li>
+              <li class="stagger-item">We are perceptions of ourselves</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal HTML (hidden by default) -->
+    <div id="modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2>Modal Title</h2>
+        <p>
+          This modal's appearance is controlled by adding/removing the
+          `.is-visible` class. The fade and scale effects are pure CSS
+          transitions.
+        </p>
+        <button id="closeModalBtn" class="btn btn-danger w-full">Close</button>
+      </div>
+    </div>
+  </body>
+</html>
